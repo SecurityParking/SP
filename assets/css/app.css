@@ -76,6 +76,9 @@
 .btn_label{
 	background-color: grey; 
 }
+.t60{
+	width: 60%;
+}
 @media screen and (max-width: 780px) {
 	#body_container_login{
 	margin-top: 40%;
@@ -89,5 +92,5 @@
 	padding: 15px;
 	width: auto;
 	box-shadow: 1px 1px 5px 5px black;
-}
+	}
 }
