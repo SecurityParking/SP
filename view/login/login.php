@@ -3,18 +3,35 @@
 	function Iniciar_Sesion(){
 		var document_user = $("#document_user").val();
 		var password_user = $("#password_user").val();
-		var accion = "cargar_Form";
-		alert(accion);
 			$.ajax({
 				url:"?clase=login&metodo=query_login",
 				type:"POST",
 				data:{
-					accion:accion,
 					document_user:document_user,
 					password_user : password_user
 				},
 				success: function(data){
-					
+					alert(data);
+					if (data=="") {
+						alert("no hay usuario");
+					}
+					else{
+						entrar(data);
+					}
+	   		 	}
+			});
+	}
+	function entrar(data_user) {
+		alert(data_user);
+		var data_user = data_user;
+			$.ajax({
+				url:"?clase=sesion&metodo=session_started",
+				type:"POST",
+				data:{
+					data_user:data_user
+				},
+				success: function(data){
+					alert(data);
 	   		 	}
 			});
 	}
